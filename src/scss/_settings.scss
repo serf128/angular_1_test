@@ -1,0 +1,105 @@
+@font-face {
+  font-family: Roboto;
+  src: url(/build/fonts/roboto-v27-latin-700.woff2);
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(/build/fonts/roboto-v27-latin-500.woff2);
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(/build/fonts/roboto-v27-latin-regular.woff2);
+  font-weight: 400;
+  font-display: swap;
+}
+
+$main-color: #aa9b77;
+$break_xl: 1500px;
+$break_lg: 1200px;
+$break_md: 992px;
+$break_sm: 768px;
+$break_xs: 576px;
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  font-size: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  min-height: 100%;
+  font-size: 16px;
+  line-height: 1;
+  background-color: white;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+}
+
+body._lock {
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-basis: 100%;
+}
+
+.container {
+  padding: 0 15px;
+}
+
+@media (min-width: $break_xs){
+  .container {
+    max-width: 540px;
+    margin: auto;
+  }
+}
+
+@media (min-width: $break_sm){
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: $break_md) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: $break_lg){
+  .container {
+    max-width: 1182px;
+  }
+}
+
+@media (min-width: $break_xl){
+  .container {
+    max-width: 1420px;
+  }
+}

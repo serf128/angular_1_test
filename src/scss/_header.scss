@@ -1,0 +1,100 @@
+.header {
+  background-image: url("/build/images/main-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+
+  &__top-bar {
+    width: calc(100% - 30px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: rem(43px);
+    padding-bottom: rem(43px);
+
+    @media (max-width: $break_sm) {
+      flex-direction: column;
+    }
+  }
+
+  &__logo {
+
+    @media (max-width: $break_sm) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__nav {
+
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0;
+
+      li {
+        margin-right: 55px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        a {
+          font-size: 1rem;
+          color: white;
+          text-transform: capitalize;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &__hero {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-bottom: rem(100px);
+  }
+
+  &__h1 {
+    font-size: rem(66px);
+    color: white;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 0.3rem;
+
+    @media (max-width: $break_md) {
+      font-size: rem(38px);
+    }
+  }
+
+  &__text {
+    max-width: 40%;
+    font-size: rem(18px);
+    line-height: 1.2;
+    color: white;
+    text-align: center;
+
+    @media (max-width: $break_md) {
+      max-width: 1000%;
+    }
+  }
+
+  &__scroll-down {
+    position: absolute;
+    bottom: rem(50px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

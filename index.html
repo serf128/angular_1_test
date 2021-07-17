@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Angular test app</title>
+    <link rel="stylesheet" id="main-css" href="/build/css/main.min.css"/>
+    <script src="/build/js/main.min.js"></script>
+</head>
+<body>
+<header class="header">
+    <div class="header__top-bar container">
+        <div class="header__logo">
+            <img src="/build/images/boot.png" alt="logo" width="53" height="40">
+        </div>
+        <nav class="header__nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#main">Products</a></li>
+                <li><a href="#"><img src="/build/images/cart.png" alt="" height="20" width="24"></a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="header__hero container">
+        <h1 class="header__h1">Our clothing, your comfort</h1>
+        <p class="header__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore
+            magna aliqua.</p>
+        <a href="#main" class="header__scroll-down">
+            <img src="/build/images/chevron-down.png" alt="" width="34" height="22">
+        </a>
+    </div>
+</header>
+<main id="main">
+    <form action="" class="filter">
+        <div class="container">
+            <div class="filter__checkboxes">
+                <input type="checkbox" class="filter__checkbox" name="filter" value="men" id="item-men" checked>
+                <label for="item-men" class="filter__label">Men</label>
+                <input type="checkbox" class="filter__checkbox" name="filter" value="women" id="item-women" checked>
+                <label for="item-women" class="filter__label">Woman</label>
+                <input type="checkbox" class="filter__checkbox" name="filter" value="child" id="item-child">
+                <label for="item-child" class="filter__label">childRobotoren</label>
+            </div>
+            <button class="filter__reset">see all prodRobotoucts</button>
+        </div>
+    </form>
+    <div class="products">
+        <div class="container">
+            <div class="product-card" tabindex="1">
+                <div class="product-card__top-bar">
+                    <select name="sizes" class="product-card__size">
+                        <option value="" selected>SIZE</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                        <option value="xxl">XXL</option>
+                    </select>
+                </div>
+                <div class="product-card__image">
+                    <img src="/build/images/t-shirt.png" alt="t-shirt" width="146" height="189">
+                </div>
+                <div class="product-card__bottom-bar">
+                    <div class="product-card__title">t-shirt</div>
+                    <div class="product-card__price">5.00€</div>
+                </div>
+            </div>
+            <div class="product-card" tabindex="2">
+                <div class="product-card__top-bar">
+                    <select name="sizes" class="product-card__size">
+                        <option value="" selected>SIZE</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                        <option value="xxl">XXL</option>
+                    </select>
+                </div>
+                <div class="product-card__image">
+                    <img src="/build/images/t-shirt.png" alt="t-shirt" width="146" height="189">
+                </div>
+                <div class="product-card__bottom-bar">
+                    <div class="product-card__title">t-shirt</div>
+                    <div class="product-card__price">5.00€</div>
+                </div>
+            </div>
+            <div class="product-card" tabindex="3">
+                <div class="product-card__top-bar">
+                    <select name="sizes" class="product-card__size">
+                        <option value="" selected>SIZE</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                        <option value="xxl">XXL</option>
+                    </select>
+                </div>
+                <div class="product-card__image">
+                    <img src="/build/images/t-shirt.png" alt="t-shirt" width="146" height="189">
+                </div>
+                <div class="product-card__bottom-bar">
+                    <div class="product-card__title">t-shirt</div>
+                    <div class="product-card__price">5.00€</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+<footer class="footer">
+    <div class="footer__top-bar">
+        <div class="container">
+            <a href="#" class="footer__tw-link">
+                <img src="/build/images/twitter.png" alt="" height="24" width="29">
+                “ E-commerce psd theme available ”
+            </a>
+        </div>
+    </div>
+    <div class="footer__main-bar">
+        <div class="container">
+            <div class="footer__left-col">
+                <div class="footer__title">
+                    Trekking
+                </div>
+                <div class="footer__about">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.
+                </div>
+            </div>
+            <div class="footer__right-col">
+                <ul class="footer__links">
+                    <li><a href="#">credits</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">about</a></li>
+                    <li><a href="#">contact</a></li>
+                </ul>
+                <div class="footer__copyright">
+                    Design by gianluca cosetta
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>
