@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" ng-app="testTask">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Angular test app</title>
     <link rel="stylesheet" id="main-css" href="/build/css/main.min.css"/>
-    <script src="/build/js/main.min.js"></script>
+    <script src="/lib/angular/angular.js"></script>
+    <script src="/app.js"></script>
 </head>
 <body>
 <header class="header">
@@ -32,77 +33,36 @@
         </a>
     </div>
 </header>
-<main id="main">
-    <form action="" class="filter">
+<main id="main" ng-controller="productsCtrl">
+    <div class="filter">
         <div class="container">
             <div class="filter__checkboxes">
-                <input type="checkbox" class="filter__checkbox" name="filter" value="men" id="item-men" checked>
+                <input type="checkbox" class="filter__checkbox" name="men" value="men" id="item-men" ng-checked="showCategory.men" ng-model="showCategory.men" ng-change="changeFilter('men')">
                 <label for="item-men" class="filter__label">Men</label>
-                <input type="checkbox" class="filter__checkbox" name="filter" value="women" id="item-women" checked>
+                <input type="checkbox" class="filter__checkbox" name="women" value="women" id="item-women"  ng-checked="showCategory.women" ng-model="showCategory.women" ng-change="changeFilter('women')">
                 <label for="item-women" class="filter__label">Woman</label>
-                <input type="checkbox" class="filter__checkbox" name="filter" value="child" id="item-child">
-                <label for="item-child" class="filter__label">childRobotoren</label>
+                <input type="checkbox" class="filter__checkbox" name="child" value="child" id="item-child" ng-checked="showCategory.child" ng-model="showCategory.child" ng-change="changeFilter('child')">
+                <label for="item-child" class="filter__label">Child</label>
             </div>
-            <button class="filter__reset">see all prodRobotoucts</button>
+            <button class="filter__reset" ng-click="resetFilter()">see all products</button>
         </div>
-    </form>
+    </div>
     <div class="products">
         <div class="container">
-            <div class="product-card" tabindex="1">
+            <div class="product-card" tabindex="{{$index}}" ng-repeat="item in data.items | filter: productsFilter">
                 <div class="product-card__top-bar">
                     <select name="sizes" class="product-card__size">
-                        <option value="" selected>SIZE</option>
-                        <option value="m">M</option>
-                        <option value="l">L</option>
-                        <option value="xl">XL</option>
-                        <option value="xxl">XXL</option>
+                        <option ng-repeat="option in item.options" value="{{option}}"  class="product-card__option">{{option}}</option>
                     </select>
                 </div>
                 <div class="product-card__image">
-                    <img src="/build/images/t-shirt.png" alt="t-shirt" width="146" height="189">
+                    <img src="/build/images/{{item.img}}.png" alt="{{item.name}}">
                 </div>
                 <div class="product-card__bottom-bar">
-                    <div class="product-card__title">t-shirt</div>
-                    <div class="product-card__price">5.00€</div>
+                    <div class="product-card__title">{{item.name}}</div>
+                    <div class="product-card__price">{{item.price}}€</div>
                 </div>
             </div>
-            <div class="product-card" tabindex="2">
-                <div class="product-card__top-bar">
-                    <select name="sizes" class="product-card__size">
-                        <option value="" selected>SIZE</option>
-                        <option value="m">M</option>
-                        <option value="l">L</option>
-                        <option value="xl">XL</option>
-                        <option value="xxl">XXL</option>
-                    </select>
-                </div>
-                <div class="product-card__image">
-                    <img src="/build/images/t-shirt.png" alt="t-shirt" width="146" height="189">
-                </div>
-                <div class="product-card__bottom-bar">
-                    <div class="product-card__title">t-shirt</div>
-                    <div class="product-card__price">5.00€</div>
-                </div>
-            </div>
-            <div class="product-card" tabindex="3">
-                <div class="product-card__top-bar">
-                    <select name="sizes" class="product-card__size">
-                        <option value="" selected>SIZE</option>
-                        <option value="m">M</option>
-                        <option value="l">L</option>
-                        <option value="xl">XL</option>
-                        <option value="xxl">XXL</option>
-                    </select>
-                </div>
-                <div class="product-card__image">
-                    <img src="/build/images/t-shirt.png" alt="t-shirt" width="146" height="189">
-                </div>
-                <div class="product-card__bottom-bar">
-                    <div class="product-card__title">t-shirt</div>
-                    <div class="product-card__price">5.00€</div>
-                </div>
-            </div>
-
         </div>
     </div>
 </main>
@@ -128,11 +88,12 @@
                 </div>
             </div>
             <div class="footer__right-col">
-                <ul class="footer__links">
-                    <li><a href="#">credits</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">about</a></li>
-                    <li><a href="#">contact</a></li>
+                <ul class="footer__links" ng-controller="menuCtrl">
+                    <li ng-repeat="item in data.footerMenu">
+                        <a href="{{item.link}}">
+                            {{item.name}}
+                        </a>
+                    </li>
                 </ul>
                 <div class="footer__copyright">
                     Design by gianluca cosetta
